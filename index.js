@@ -24,7 +24,7 @@ function Router() {
  * dynamic matching via capture groups. The following formats are supported:
  * - Named capture groups: `/products/<id>/`
  * - Named capture groups with formatting: `/products/<id:\\d{1,2}>/`
- *   (note: remember to propertly escape backslashed in your regex strings.)
+ *   (note: remember to properly escape backslashed in your regex strings.)
  *
  * For full matching control, you can also use a regular expression:
  * - `/\/products\/(\d{1,2})\//`
