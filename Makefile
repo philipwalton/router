@@ -1,6 +1,6 @@
 bins := ./node_modules/.bin
 src := index.js
-test := test.js
+test := test/*.js
 
 all: install lint test
 

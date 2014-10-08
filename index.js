@@ -79,9 +79,8 @@ Router.prototype.regexize_ = function(pattern) {
     return '(' + (arguments[2] || '\\w+') + ')';
   });
 
-  debugger
   return new RegExp('^' + pattern + '$');
-}
+};
 
 
 module.exports = Router;

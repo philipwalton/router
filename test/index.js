@@ -1,7 +1,7 @@
 /* global describe, it */
 
 var assert = require('assert');
-var Router = require('./');
+var Router = require('..');
 var sinon = require('sinon');
 
 describe('Router', function() {
