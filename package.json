@@ -1,0 +1,27 @@
+{
+  "name": "router",
+  "version": "0.1.0",
+  "description": "A simple router that binds URLs paths and patterns to functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/philipwalton/router.git"
+  },
+  "keywords": [
+    "router"
+  ],
+  "author": "philipwalton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/philipwalton/router/issues"
+  },
+  "homepage": "https://github.com/philipwalton/router",
+  "devDependencies": {
+    "jshint": "^2.5.6",
+    "mocha": "^1.21.4",
+    "sinon": "^1.10.3"
+  }
+}
