@@ -76,7 +76,7 @@ Router.prototype.match = function(path) {
 
 Router.prototype.regexize_ = function(pattern) {
   pattern = pattern.replace(/<([a-z]+):?([^>]+)?>/g, function() {
-    return '(' + (arguments[2] || '\\w+') + ')';
+    return '(' + (arguments[2] || '.+?') + ')';
   });
 
   return new RegExp('^' + pattern + '$');

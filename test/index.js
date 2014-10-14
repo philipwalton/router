@@ -23,7 +23,7 @@ describe('Router', function() {
           fn: noop
         },
         {
-          pattern: new RegExp('^/(\\w+)/(\\w+)/$'),
+          pattern: new RegExp('^/(.+?)/(.+?)/$'),
           fn: noop
         },
         {
@@ -82,6 +82,24 @@ describe('Router', function() {
       assert(handler2.called);
       assert(!handler3.called);
 
+    });
+
+    it('matches any character non-greedily for basic capture groups, ' +
+        'leaving it up to the author to write proper URLs', function() {
+
+      var handler1 = sinon.spy();
+      var handler2 = sinon.spy();
+
+      Router()
+          .case('/product/<id>/', handler1)
+          .match('/product/~foo_BAR-fi(zz).buzz/');
+
+      Router()
+          .case('/<one>/<two>', handler2)
+          .match('/~!@#$^/*.,<>()_-+=');
+
+      assert(handler1.calledWith('~foo_BAR-fi(zz).buzz'));
+      assert(handler2.calledWith('~!@#$^', '*.,<>()_-+='));
     });
 
     it('passes capture groups from the pattern to the handler.', function() {
